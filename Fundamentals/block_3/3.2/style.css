@@ -1,0 +1,21 @@
+#titulo3 {
+    width: 60px;
+    color: orange;
+    font-family: monospace;
+
+}
+.listacores{ 
+    color: orchid;
+    background-color: black;
+    line-height: 40px;
+    text-align: center;
+    text-decoration: underline;
+}
+p{
+    font-weight: 600px;
+    font-size: 3em;
+}
+
+body {
+    font-size: 16px;
+}

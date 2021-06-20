@@ -1,0 +1,15 @@
+.topsites {
+    text-align: center;
+}
+.topsites ol {
+    text-align: left;
+    list-style-type: upper-roman;
+    margin-left: 550px;
+    
+}
+li:hover {
+    background-color: blueviolet;
+}
+li:active {
+    color: white;
+}

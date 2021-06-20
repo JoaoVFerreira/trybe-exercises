@@ -1,0 +1,9 @@
+#aliados li a:hover {
+    font-weight: 700;
+}
+#aliados li a[href*="stackoverflow"]{
+    color: orange;
+}
+#aliados li a[href*="w3schools"]{
+    color: green;
+}
