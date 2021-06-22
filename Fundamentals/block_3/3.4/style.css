@@ -1,0 +1,42 @@
+* {
+    font-family: monospace, sans-serif;
+    color: cyan;
+    background-color:black;
+}
+
+h1 , h2 {
+    text-align: center;
+}
+
+.linkheader {
+    list-style: none;
+}
+    
+.linkheader ul li {
+    display: inline; 
+    margin-left: 20px;
+}
+
+.linkheader ul li:hover {
+    color: yellow;
+}
+
+.introductionmantis {
+    display: inline-block;
+    width: 45%;
+    float:left;
+}
+
+
+.imgmantis {
+    width: 400px;
+}
+
+.imgblock {
+    display: inline-block;
+    margin-left: 100px;
+    border: 4px solid cyan;
+    
+}
+
+
