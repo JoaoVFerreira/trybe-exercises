@@ -44,12 +44,16 @@
     <script>
 
       function mudaTagP (){
-      let paragraph = document.getElementsByTagName("p")[1];
-      paragraph.innerHTML = "Ganhando uns 5k e aprendendo everyday"
+        let paragraph = document.getElementsByTagName("p")[1];
+        paragraph.innerHTML = "Ganhando uns 5k e aprendendo everyday"
       }
       mudaTagP();
       
-      
+      function changeColor (){
+        let mudaCor = document.getElementsByClassName("main-content")[0];
+        mudaCor.style.background = "rgb(76,164,109)";
+      }
+      changeColor();
       
 
         /*
