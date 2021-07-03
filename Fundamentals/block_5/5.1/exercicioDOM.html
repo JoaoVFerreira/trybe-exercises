@@ -43,19 +43,19 @@
     </main>
     <script>
 
-      function mudaTagP (){
+      function mudaTagP () {
         let paragraph = document.getElementsByTagName("p")[1];
         paragraph.innerHTML = "Ganhando uns 5k e aprendendo everyday"
       }
       mudaTagP();
       
-      function changeColor (){
+      function changeColor () {
         let mudaCor = document.getElementsByClassName("main-content")[0];
         mudaCor.style.background = "rgb(76,164,109)";
       }
       changeColor();
       
-      function changeAnotherColor (){
+      function changeAnotherColor () {
         let mudaOutraCor = document.getElementsByClassName("center-content")[0];
         mudaOutraCor.style.background = "white";
       }
@@ -66,6 +66,12 @@
         corrigeh1.innerText = "Exercício 5.1 - JavaScript"
       }
       corrigeTagH1();
+
+      function changeEveryTextP () {
+        let mudaTodoTextoP = document.getElementsByTagName("p")[0];
+        mudaTodoTextoP.innerHTML= mudaTodoTextoP.innerHTML.toUpperCase()
+      }
+      changeEveryTextP();
 
         /*
         Aqui você vai modificar os elementos já existentes utilizando apenas as funções:
