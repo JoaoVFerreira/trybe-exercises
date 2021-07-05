@@ -83,6 +83,22 @@
        addDivFilhoDaDivComClasseMainContent02.className = 'right-content';
        addDivFilhoBody.appendChild(addDivFilhoDaDivComClasseMainContent02);
 
+       const addImagemFilhoDeMainContent = document.createElement('img');
+       addImagemFilhoDeMainContent.src = 'https://picsum.photos/200'
+       addImagemFilhoDeMainContent.className = 'small-image';
+       addDivFilhoDaDivComClasseMainContent.appendChild(addImagemFilhoDeMainContent);
+
+       const ListaFilhoMainContent02 = document.createElement('ul');
+       let numbers = ['um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez']
+        for ( let i = 0; i < numbers.length; i+= 1){
+            const listItem = document.createElement('li');
+            listItem.innerText = numbers[i];
+            ListaFilhoMainContent02.appendChild(listItem);
+        }
+        addDivFilhoDaDivComClasseMainContent02.appendChild(ListaFilhoMainContent02);
+
+        
+
     </script>
   </body>
 </html>
