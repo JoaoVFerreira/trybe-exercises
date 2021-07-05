@@ -1,28 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div id="paiDoPai">
-        <div id="pai">
-          <div id="primeiroFilho"></div>
-          <div id="elementoOndeVoceEsta">
-            <div id="primeiroFilhoDoFilho"></div>
-            <div id="segundoEUltimoFilhoDoFilho"></div>
-          </div>
-          Atenção!
-          <div id="terceiroFilho"></div>
-          <div id="quartoEUltimoFilho"></div>
-        </div>
-      </div>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
 
-      <script>
-        
+      .title {
+        text-align: center;
+      }
 
-      </script>
-</body>
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+       
+       const paiBody = document.querySelector('body');
+       const addTagh1 = document.createElement('h1');
+       paiBody.appendChild(addTagh1);
+       addTagh1.innerText = 'Exercicio 5.2 - JavaScript DOM'
+
+       const addDivFilhoBody = document.createElement('div');
+       paiBody.appendChild(addDivFilhoBody);
+       addDivFilhoBody.className = 'main-content';
+
+       const addDivFilhoDiv = document.createElement('div');
+       addDivFilhoDiv.className = 'center-content';
+       addDivFilhoBody.appendChild(addDivFilhoDiv);
+
+       const addTagPFilhoDiv = document.createElement('p');
+       addDivFilhoDiv.appendChild(addTagPFilhoDiv);
+       addTagPFilhoDiv.innerText = 'Algum texto bem cativante aqui!';
+
+
+    </script>
+  </body>
 </html>
