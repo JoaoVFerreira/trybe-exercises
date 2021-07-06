@@ -46,3 +46,17 @@ return palindromo;
 console.log(verificaPalindrome('dudu'));
 
 
+
+const n = 5;
+const asterisco = "*";
+const espaco = ' ';
+let armazenaPiramide = '';
+
+for (let linha = 1; linha <= n; linha+=1){
+    for ( let coluna = 5; coluna >= 5; coluna-=1){
+        armazenaPiramide+= asterisco
+    }
+    armazenaPiramide+= espaco
+}
+
+console.log(armazenaPiramide)

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+       
+       const paiBody = document.querySelector('body');
+       const addTagh1 = document.createElement('h1');
+       paiBody.appendChild(addTagh1);
+       addTagh1.innerText = 'Exercicio 5.2 - JavaScript DOM'
+
+       const addDivFilhoBody = document.createElement('div');
+       paiBody.appendChild(addDivFilhoBody);
+       addDivFilhoBody.className = 'main-content';
+
+       const addDivFilhoDiv = document.createElement('div');
+       addDivFilhoDiv.className = 'center-content';
+       addDivFilhoBody.appendChild(addDivFilhoDiv);
+
+       const addTagPFilhoDiv = document.createElement('p');
+       addDivFilhoDiv.appendChild(addTagPFilhoDiv);
+       addTagPFilhoDiv.innerText = 'Algum texto bem cativante aqui!';
+
+       const addDivFilhoDaDivComClasseMainContent = document.createElement('div');
+       addDivFilhoDaDivComClasseMainContent.className = 'left-content';
+       addDivFilhoBody.appendChild(addDivFilhoDaDivComClasseMainContent);
+
+       const addDivFilhoDaDivComClasseMainContent02 = document.createElement('div');
+       addDivFilhoDaDivComClasseMainContent02.className = 'right-content';
+       addDivFilhoBody.appendChild(addDivFilhoDaDivComClasseMainContent02);
+
+       const addImagemFilhoDeMainContent = document.createElement('img');
+       addImagemFilhoDeMainContent.src = 'https://picsum.photos/200'
+       addImagemFilhoDeMainContent.className = 'small-image';
+       addDivFilhoDaDivComClasseMainContent.appendChild(addImagemFilhoDeMainContent);
+
+       const ListaFilhoMainContent02 = document.createElement('ul');
+       let numbers = ['um','dois','tres','quatro','cinco','seis','sete','oito','nove','dez']
+        for ( let i = 0; i < numbers.length; i+= 1){
+            const listItem = document.createElement('li');
+            listItem.innerText = numbers[i];
+            ListaFilhoMainContent02.appendChild(listItem);
+        }
+        addDivFilhoDaDivComClasseMainContent02.appendChild(ListaFilhoMainContent02);
+
+
+        for ( let i = 0; i < 3; i += 1){
+            const h3 = document.createElement('h3');
+            h3.innerText = i;
+            addDivFilhoBody.appendChild(h3);
+            h3.className = 'description';
+        }
+
+        addTagh1.className = 'title';
+        
+        addDivFilhoBody.removeChild(addDivFilhoDaDivComClasseMainContent);
+
+        
+        addDivFilhoDaDivComClasseMainContent02.style.marginRight = 'auto';
+
+        addDivFilhoBody.style.background = 'pink';
+
+        ListaFilhoMainContent02.lastChild.remove ();
+        ListaFilhoMainContent02.lastChild.remove ();
+        
+
+    </script>
+  </body>
+</html>
