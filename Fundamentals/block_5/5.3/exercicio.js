@@ -116,5 +116,27 @@ function createTextInFriday(diaSexta) {
 let sextas = [4, 11, 18, 25];
 createTextInFriday(sextas);
 
-// EXERCICIO 6
+// EXERCICIO 6 // PQ NÃO FUNCIONA COM A CLASSE ???
+
+function increaseTamanho () {
+  let anyDay = document.querySelector('#days');
+
+  anyDay.addEventListener('mouseover', function (event){
+    event.target.style.fontSize = '30px';
+
+  })
+}
+
+function decreaseTamanho (){
+  let anyDay = document.querySelector('#days');
+
+  anyDay.addEventListener('mouseout', function (event){
+    event.target.style.fontSize = '20px';
+  })
+}
+
+increaseTamanho ();
+decreaseTamanho ();
+
+// EXERCICIO 7 
 
