@@ -60,3 +60,31 @@ function createHoliday (buttonName){
 }
 createHoliday ('feriados');
 
+// ECERCICIO 3
+
+function changeColor (){
+
+  let getButton = document.querySelector('#btn-holiday');
+  let classHolidays = document.querySelectorAll('.holiday');
+  let cor = 'rgb(238,238,238)';
+  let otherColor = 'red';
+
+  getButton.addEventListener("click", function (){
+    for( let index = 0; index < classHolidays.length; index+= 1){
+      if(classHolidays[index].style.backgroundColor === otherColor){
+        classHolidays[index].style.backgroundColor = cor;
+      } else {
+        classHolidays[index].style.backgroundColor = otherColor;
+      }
+    }
+  })
+}
+
+changeColor ();
+
+// EXERCICIO 4 
+
+
+
+
+
