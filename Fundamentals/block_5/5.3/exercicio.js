@@ -46,6 +46,7 @@ function createDaysOfTheMonth() {
   }
 }
 
+
 createDaysOfTheMonth();
 
 // EXERCICIO 2
