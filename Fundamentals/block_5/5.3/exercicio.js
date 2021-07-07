@@ -118,25 +118,52 @@ createTextInFriday(sextas);
 
 // EXERCICIO 6 // PQ NÃO FUNCIONA COM A CLASSE ???
 
-function increaseTamanho () {
+function increaseTamanho() {
   let anyDay = document.querySelector('#days');
 
-  anyDay.addEventListener('mouseover', function (event){
+  anyDay.addEventListener('mouseover', function (event) {
     event.target.style.fontSize = '30px';
 
   })
 }
 
-function decreaseTamanho (){
+function decreaseTamanho() {
   let anyDay = document.querySelector('#days');
 
-  anyDay.addEventListener('mouseout', function (event){
+  anyDay.addEventListener('mouseout', function (event) {
     event.target.style.fontSize = '20px';
   })
 }
 
-increaseTamanho ();
-decreaseTamanho ();
+increaseTamanho();
+decreaseTamanho();
 
 // EXERCICIO 7 
+
+function createLIst(string) {
+  let paiTask = document.querySelector('.my-tasks');
+  let task = document.createElement('span');
+
+  task.innerHTML = string;
+  paiTask.appendChild(task);
+}
+
+createLIst('Fazer rango');
+
+// EXERCICIO 8
+
+function createColor(cor) {
+  let paiTask = document.querySelector('.my-tasks');
+  let colorDiv = document.createElement('div');
+  colorDiv.className = 'task';
+  paiTask.appendChild(colorDiv);
+
+  colorDiv.style.backgroundColor = cor;
+}
+
+createColor ('red');
+
+// EXERCICIO 9 
+
+
 
