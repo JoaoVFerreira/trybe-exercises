@@ -116,7 +116,7 @@ function createTextInFriday(diaSexta) {
 let sextas = [4, 11, 18, 25];
 createTextInFriday(sextas);
 
-// EXERCICIO 6 // PQ NÃO FUNCIONA COM A CLASSE ???
+// EXERCICIO 6 
 
 function increaseTamanho() {
   let anyDay = document.querySelector('#days');
@@ -161,9 +161,27 @@ function createColor(cor) {
   colorDiv.style.backgroundColor = cor;
 }
 
-createColor ('red');
+createColor('red');
 
-// EXERCICIO 9 
+// EXERCICIO 9  // terminar dps
+
+function selected() {
+  // bernadão cara gente boa++
+  // Estado inicial é class = taks; quando clicar mudar para class = task selected , se clicar novamente mudar pra task
+
+  let notSelecionar = document.getElementsByClassName('task selected');
+  let notSelecionarUnico = document.querySelector('.task')
+    console.log(notSelecionar);
+   notSelecionarUnico.addEventListener('click', function (event) {
+    console.log(notSelecionar);
+    if (notSelecionar.length === 0) {
+      event.target.className = 'task selected';
+    } else {
+      event.target.className = 'task';
+    }
+  })
+}
+selected();
 
 
 
