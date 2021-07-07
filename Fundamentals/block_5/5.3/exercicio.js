@@ -50,7 +50,7 @@ createDaysOfTheMonth();
 
 // EXERCICIO 2
 
-function createHoliday (buttonName){
+function createHoliday(buttonName) {
   let paiButton = document.querySelector('.buttons-container');
   let createButton = document.createElement('button');
   createButton.id = 'btn-holiday';
@@ -58,20 +58,20 @@ function createHoliday (buttonName){
   paiButton.appendChild(createButton);
 
 }
-createHoliday ('feriados');
+createHoliday('Feriados');
 
 // ECERCICIO 3
 
-function changeColor (){
+function changeColor() {
 
   let getButton = document.querySelector('#btn-holiday');
   let classHolidays = document.querySelectorAll('.holiday');
   let cor = 'rgb(238,238,238)';
   let otherColor = 'red';
 
-  getButton.addEventListener("click", function (){
-    for( let index = 0; index < classHolidays.length; index+= 1){
-      if(classHolidays[index].style.backgroundColor === otherColor){
+  getButton.addEventListener("click", function () {
+    for (let index = 0; index < classHolidays.length; index += 1) {
+      if (classHolidays[index].style.backgroundColor === otherColor) {
         classHolidays[index].style.backgroundColor = cor;
       } else {
         classHolidays[index].style.backgroundColor = otherColor;
@@ -80,11 +80,11 @@ function changeColor (){
   })
 }
 
-changeColor ();
+changeColor();
 
 // EXERCICIO 4 
 
-function createFridayButton (namedButton){
+function createFridayButton(namedButton) {
 
   let dadButton = document.querySelector('.buttons-container');
   let fridayButton = document.createElement('button');
@@ -94,10 +94,27 @@ function createFridayButton (namedButton){
 
 }
 
-createFridayButton ('Sexta-Feira');
+createFridayButton('Sexta-Feira');
 
 // EXERCICIO 5
 
+function createTextInFriday(diaSexta) {
+  let classFriday = document.querySelectorAll('.friday');
+  let sextaButton = document.querySelector('#btn-friday');
+  let texto = 'BAILÃO';
 
+  sextaButton.addEventListener("click", function () {
+    for (let index = 0; index < classFriday.length; index += 1) {
+      if (classFriday[index].innerHTML === texto) {
+        classFriday[index].innerHTML = diaSexta[index];
+      } else {
+        classFriday[index].innerHTML = texto;
+      }
+    }
+  })
+}
+let sextas = [4, 11, 18, 25];
+createTextInFriday(sextas);
 
+// EXERCICIO 6
 
