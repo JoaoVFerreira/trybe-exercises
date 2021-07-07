@@ -84,6 +84,19 @@ changeColor ();
 
 // EXERCICIO 4 
 
+function createFridayButton (namedButton){
+
+  let dadButton = document.querySelector('.buttons-container');
+  let fridayButton = document.createElement('button');
+  fridayButton.id = 'btn-friday';
+  fridayButton.innerHTML = namedButton;
+  dadButton.appendChild(fridayButton);
+
+}
+
+createFridayButton ('Sexta-Feira');
+
+// EXERCICIO 5
 
 
 
