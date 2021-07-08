@@ -181,3 +181,16 @@ button.addEventListener ('click', function (event){
 changeClass ();
 
 
+// EXERCICIO 10
+
+function number10 (cor){
+
+let dayOfTheMonth = document.querySelector('.day');
+
+dayOfTheMonth.addEventListener ('click',function (event){
+event.target.style.backgroundColor = cor;
+})
+
+}
+
+number10 ('blue');
