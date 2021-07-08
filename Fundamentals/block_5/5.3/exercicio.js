@@ -165,5 +165,19 @@ createColor ('red');
 
 // EXERCICIO 9 
 
+function changeClass () {
+
+let button = document.querySelector('.task');
+let selected = document.getElementsByClassName('task selected')
+
+button.addEventListener ('click', function (event){
+  if( selected.length === 0){
+    event.target.className = 'task selected';
+  } else {
+    event.target.className = 'task';
+  }
+})
+}
+changeClass ();
 
 
