@@ -77,3 +77,4 @@ console.log(newPerson);
 console.log(person);
 
 
+console.log(person.name)
