@@ -59,3 +59,45 @@ assert.ok(typeof removeVowels === 'function');
 assert.strictEqual(removeVowels(parameter), result);
 
 //EXERCICIO 3
+
+const assert = require ('assert');
+
+const greaterThanTen = (array) => {
+  let results = [];
+  for (let index = 0; index < array.length; index += 1) {
+    if (array[index] > 10) {
+      results.push(array[index]);
+    }
+  }
+  return results;
+};
+
+const parameter = [4, 10, 32, 9, 21];
+const result = [32, 21];
+
+assert.strictEqual(typeof greaterThanTen, 'function');
+assert.deepStrictEqual(greaterThanTen(parameter), result);
+const result2 = [32, 21, 15];
+assert.notDeepStrictEqual(greaterThanTen(parameter), result2 , 'VAI DAR PAU, SE ELES FOREM IGUAIS');
+assert.deepStrictEqual(greaterThanTen(parameter), result, 'VAI DAR PAU,SE ELES FOREM DIFERENTES');
+
+
+//EXERCICIO 4
+
+const assert = require('assert');
+
+function secondThirdSmallest(array) {
+  let results = []
+  array.sort(function (x, y) {
+      return x - y;
+  });
+  results = [array[1], array[2]];
+  return results;
+};
+
+const parameter = [4, 10, 32, 9, 21, 90, 5, 11, 8, 6];
+const result = [5, 6];
+
+assert.ok(typeof secondThirdSmallest === 'function');
+assert.deepStrictEqual(secondThirdSmallest(parameter), result);
+
