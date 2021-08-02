@@ -25,7 +25,7 @@ const verifyAgeDrive = (arrayOfPeople) => (
   arrayOfPeople.filter((people) => (people.age < 18))
 );
 
-const tmj = objPeople.filter((pessoa) => pessoa.age < 18);
+const tmj = objPeople.filter((pessoa) => pessoa.age);
 console.log(tmj);
 
 console.log(verifyAgeDrive(objPeople));
