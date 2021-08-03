@@ -27,7 +27,7 @@ const numbers = [32, 15, 3, 2, -5, 56, 10];
 const getSum = (result, number) => {
   console.log(result); // 0 32 47 50 52 47 103
   return result + number;
-  };
+};
 const sumNumbers = numbers.reduce(getSum, 10); // Parâmetro adicionado ao reduce: o "0"
 console.log(sumNumbers); // 113
 
@@ -35,34 +35,34 @@ console.log(sumNumbers); // 113
 
 const list1 = [5, 10, 15, 24, 5, 32]
 
-function lookTheBigger (list) {
+function lookTheBigger(list) {
   let result = 0
-  for( number of list){
-    number > result ? result=number : result
+  for (number of list) {
+    number > result ? result = number : result
   }
   return result
 }
 console.log(lookTheBigger(list1))
 
 
-const sum = (result,number) => number > result ? result = number : result
-console.log(list1.reduce(sum,100))
+const sum = (result, number) => number > result ? result = number : result
+console.log(list1.reduce(sum, 100))
 
 console.log(lookTheBiggerReduce(list1))
 
 
 const list1 = [5, 10, 15, 24, 5, 32]
 
-function oddNumber (list) {
-const pares = list.filter((number) => number % 2 === 0 ? number :false)
-return pares.reduce((result, number) => result+=number)
+function oddNumber(list) {
+  const pares = list.filter((number) => number % 2 === 0 ? number : false)
+  return pares.reduce((result, number) => result += number)
 }
 
 console.log(oddNumber(list1))
 
 
-const sumOdd = (result, number) => number % 2 === 0 ? result +=number : result
-console.log(list1.reduce(sumOdd,0))
+const sumOdd = (result, number) => number % 2 === 0 ? result += number : result
+console.log(list1.reduce(sumOdd, 0))
 
 const estudantes = [
   {
@@ -141,7 +141,7 @@ const estudantes = [
 
 
 const getBestClass = (acc, materia) => {
-  if(acc.nota > materia.nota) return acc;
+  if (acc.nota > materia.nota) return acc;
   return materia
 }
 
@@ -177,11 +177,11 @@ console.log(color1)
 
 var numeros = [10, 11, 12, 13, 14, 15, 16];
 var total = numeros.reduce((acumulador, numero, indice, original) => {
-console.info(`${acumulador} total até o momento`);
-console.log(`${numero} valor atual`);
-console.log(`${indice} indice atual`);
-console.log(`${original} array original`);
-return acumulador += numero;
+  console.info(`${acumulador} total até o momento`);
+  console.log(`${numero} valor atual`);
+  console.log(`${indice} indice atual`);
+  console.log(`${original} array original`);
+  return acumulador += numero;
 }, 0)
 console.warn('acaboooou');
 console.log(total)
@@ -190,7 +190,7 @@ console.log(total)
 
 const a = [1, 2, 3, 4, 5], b = [6, 7, 8, 9, 10];
 var ab = a.reduce((acumulador, elemento) => acumulador += elemento,
-b.reduce((acumulador, elemento) => acumulador += elemento, 0))
+  b.reduce((acumulador, elemento) => acumulador += elemento, 0))
 console.log(ab);
 
 //
@@ -216,32 +216,56 @@ animais = [
     idade: 3,
     tipo: 'ca'
   },
-  ];
+];
 
- //dogsAgeSum = animais.filter((animal) => animal.tipo === 'cao')
+//dogsAgeSum = animais.filter((animal) => animal.tipo === 'cao')
 //.map((cao) => cao.idade *= 7)
 //.reduce((total, cao) => total += cao)
 
 
 dogsAgeSum = animais.reduce((total, elemento) => {
-  if (elemento.tipo === 'cao') return total += (elemento.idade *=7);
-  else return total}, 0);
-  console.log(dogsAgeSum);
+  if (elemento.tipo === 'cao') return total += (elemento.idade *= 7);
+  else return total
+}, 0);
+console.log(dogsAgeSum);
 
-  //
+//
 
 
-  const lista = [
-    {id: 1, nome: "gol"},
-    {id: 2, nome: "ferrari"},
-    {id: 3, nome: "camaro"}
+const lista = [
+  { id: 1, nome: "gol" },
+  { id: 2, nome: "ferrari" },
+  { id: 3, nome: "camaro" }
 ];
 const callback = (acumulador, valor) => {
-    acumulador[valor.id] = valor.nome
-    return acumulador
+  acumulador[valor.id] = valor.nome
+  return acumulador
 };
 const valorInicial = {};
 const carrosIndexadosPorId = lista.reduce(callback, valorInicial);
-console.log(carrosIndexadosPorId[2]) 
+console.log(carrosIndexadosPorId[2])
 
 //camaro :)
+
+
+//
+
+const list1 = [
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
+  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
+  { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
+  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
+];
+
+function countLanguade(list) {
+ return list.reduce((acc, curr) => {
+    if (acc[curr.language]=== undefined) {
+      acc[curr.language] = 1
+    } else {
+      acc[curr.language]++
+    }
+    return acc
+  }, {})
+}
+
+console.log(countLanguade(list1))
