@@ -1,11 +1,11 @@
 const numbers = [32, 15, 3, 2, -5, 56, 10];
 
-const sumNumbers = numbers.reduce((result, number) => result + number); // O parâmetro `result` é o acumulador. Ele recebe, do `reduce`, o retorno da função a cada iteração.
+const sumNumbers = numbers.reduce((result, number) => result += number); // O parâmetro `result` é o acumulador. Ele recebe, do `reduce`, o retorno da função a cada iteração.
 console.log(sumNumbers); // 113
 
 // Ou seja:
 
-const getSum = (result, number) => result + number;
+const getSum = (result, number) => result += number;
 const sumNumbers = numbers.reduce(getSum);
 console.log(sumNumbers); // 113
 
@@ -151,3 +151,97 @@ const reportStudente = students => students.map((students) => ({
 }));
 
 console.log(reportStudente(estudantes))
+
+//----------------------------EXEMPLOS ABAIXO ---------------------------------
+
+let nomes = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+let quantidadeNomes = nomes.reduce(function (todosNomes, nome) {
+  if (nome in todosNomes) {
+    todosNomes[nome]++;
+  }
+  else {
+    todosNomes[nome] = 1;
+  }
+  return todosNomes;
+}, {});
+console.log(quantidadeNomes);
+// quantidade de nomes:
+// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
+
+var color1 = new String('green');
+console.log(color1)
+'length' in color1 // retorna true
+
+//
+
+var numeros = [10, 11, 12, 13, 14, 15, 16];
+var total = numeros.reduce((acumulador, numero, indice, original) => {
+console.info(`${acumulador} total até o momento`);
+console.log(`${numero} valor atual`);
+console.log(`${indice} indice atual`);
+console.log(`${original} array original`);
+return acumulador += numero;
+}, 0)
+console.warn('acaboooou');
+console.log(total)
+
+//
+
+const a = [1, 2, 3, 4, 5], b = [6, 7, 8, 9, 10];
+var ab = a.reduce((acumulador, elemento) => acumulador += elemento,
+b.reduce((acumulador, elemento) => acumulador += elemento, 0))
+console.log(ab);
+
+//
+
+animais = [
+  {
+    nome: 'Fumaça',
+    idade: 3,
+    tipo: 'ca'
+  },
+  {
+    nome: 'Tobby',
+    idade: 6,
+    tipo: 'ca'
+  },
+  {
+    nome: 'Laminha',
+    idade: 1,
+    tipo: 'gato'
+  },
+  {
+    nome: 'Nutella',
+    idade: 3,
+    tipo: 'ca'
+  },
+  ];
+
+ //dogsAgeSum = animais.filter((animal) => animal.tipo === 'cao')
+//.map((cao) => cao.idade *= 7)
+//.reduce((total, cao) => total += cao)
+
+
+dogsAgeSum = animais.reduce((total, elemento) => {
+  if (elemento.tipo === 'cao') return total += (elemento.idade *=7);
+  else return total}, 0);
+  console.log(dogsAgeSum);
+
+  //
+
+
+  const lista = [
+    {id: 1, nome: "gol"},
+    {id: 2, nome: "ferrari"},
+    {id: 3, nome: "camaro"}
+];
+const callback = (acumulador, valor) => {
+    acumulador[valor.id] = valor.nome
+    return acumulador
+};
+const valorInicial = {};
+const carrosIndexadosPorId = lista.reduce(callback, valorInicial);
+console.log(carrosIndexadosPorId[2]) 
+
+//camaro :)
