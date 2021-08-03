@@ -46,8 +46,11 @@ console.log(comida, animal, bebida); // arroz gato água
 
 //
 
-let numerosPares = [1, 3, 5, 6, 8, 10, 12];
 
-console.log(numerosPares); // [6, 8, 10, 12];
+const numerosPares = [ 1, 3, 5, 6, 8, 10, 12];
+
+[,,, ...even] = numerosPares;
+
+console.log(even); // [6, 8, 10, 12];
 
 // Utilize array destructuring para produzir o resultado esperado pelo console.log abaixo
