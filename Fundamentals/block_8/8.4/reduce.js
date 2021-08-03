@@ -257,15 +257,16 @@ const list1 = [
   { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
 ];
 
-function countLanguade(list) {
+function countLanguages(list) {
  return list.reduce((acc, curr) => {
-    if (acc[curr.language]=== undefined) {
+    if (acc[curr.language] === undefined) {
       acc[curr.language] = 1
     } else {
-      acc[curr.language]++
+      acc[curr.language] = acc[curr.language] + 1
     }
     return acc
   }, {})
 }
 
 console.log(countLanguade(list1))
+
