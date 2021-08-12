@@ -20,16 +20,19 @@ const createPicture = async () => {
 
 createPicture();
 
-
-const getButtonDog = document.getElementById("btn-dog");
-const generateRandomImageClick = getButtonDog.addEventListener(("click", async () => {
-  const body = document.querySelector("body");
-  const img = document.querySelector("img");
-  body.removeChild(img);
-
-  return await createPicture();
-
-}))
+async function bora () {
+  const getButtonDog = document.getElementById("btn-dog");
+  const generateRandomImageClick = getButtonDog.addEventListener(("click", () => {
+    const body = document.querySelector("body");
+    const img = document.querySelector("img");
+    body.removeChild(img);
+  
+    return createPicture();
+  
+  }))
+  return generateRandomImageClick;
+}
+bora ();
 
 
 
