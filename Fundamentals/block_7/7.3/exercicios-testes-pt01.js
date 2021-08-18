@@ -1,5 +1,4 @@
 // EXERCICIO 1
-
 const assert = require('assert');
 
 function sum(a, b) {
