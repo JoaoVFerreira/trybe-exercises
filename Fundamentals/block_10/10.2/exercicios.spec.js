@@ -23,7 +23,7 @@ describe('Exercice 1', () => {
 
 // EXERCICIO 2
 
-const users = [
+/*const users = [
   { id: 1, name: 'Mark' },
   { id: 2, name: 'Paul' },
 ];
@@ -38,7 +38,7 @@ const findUserById = (id) => new Promise((resolve, reject) => {
   return reject(new Error(`User with ${id} not found.`));
 });
 
-const getUserName = (userId) => findUserById(userId).then((user) => user.name);
+const getUserName = (userId) => findUserById(userId).then((user) => user.name); */
 
 
 /* test('Verify if exists the current ID as a parameter', () => {
@@ -64,7 +64,7 @@ it('getUserName', () => {
   getUserName(1).then(resolve => expect(resolve).toEqual('Mark'))
 }) */
 
-describe('Tests linkeds to exercice 2', () => {
+/*describe('Tests linkeds to exercice 2', () => {
   describe('when the user ID exists', () => {
 
     it('return the username',() => {
@@ -80,4 +80,4 @@ describe('Tests linkeds to exercice 2', () => {
       toEqual(new Error(`User with ${3} not found.`)))
     })
   })
-})
+}) */
