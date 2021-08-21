@@ -79,3 +79,25 @@ describe('when testting the last function of fixing learnings', () => {
     expect(mockSubtrair).toHaveBeenCalledWith(10, 2);
   })
 })
+
+const multiply = (a, b) => a * b;
+
+const power = (a, b) => {
+  let pow = 1;
+  for (let i = 0; i < b; i += 1) {
+    pow = multiply(pow, a);
+  }
+  return pow;
+};
+
+console.log(power(10,2));
+
+const factorial = (a) => {
+  let fact = a;
+  for (let i = 1; i < a; i += 1) {
+    fact *= i
+  }
+  return fact;
+};
+
+console.log(factorial(10));
