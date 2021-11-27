@@ -6,34 +6,34 @@ class App extends Component {
 
   constructor() {
     super()
-    this.handleClickL = this.handleClickL.bind(this)
-    this.handleClickF = this.handleClickF.bind(this)
-    this.handleClickJ = this.handleClickJ.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+    this.state = {
+      numeroDeClicks: 0
+    }
   }
 
-  handleClickL() {
-    console.log('SIM')
-    console.log(this)
+  handleClick() {
+   
+    this.setState((estadoAnterior, _props) => ({
+      numeroDeClicks: estadoAnterior.numeroDeClicks + 1
+    }), () => {
+      console.log(this.changeColor(this.state.numeroDeClicks))
+    }
+    )
+    
   }
 
-  handleClickJ() {
-    console.log('NÃO')
-    console.log(this)
+  changeColor (num) {
+    return num % 2 === 0 ? 'green' : 'purple'
   }
-
-  handleClickF() {
-    console.log('Jorges, Sandra Marreca, Juca Tigre, Lucão Tetudão')
-    console.log(this)
-  }
-
 
   render() {
+    console.log(this)
     return (
-      <div>
-        <button onClick={this.handleClickL}>Lucão é Tonhão?</button>
-        <button onClick={this.handleClickJ}>João domina kickão?</button>
-        <button onClick={this.handleClickF}>Family</button>
-      </div>
+        <button 
+        onClick={this.handleClick}
+        style={{backgroundColor: this.changeColor(this.state.numeroDeClicks)}}
+        >{this.state.numeroDeClicks} </button> 
     )
   }
 }
