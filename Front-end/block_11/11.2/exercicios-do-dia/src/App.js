@@ -8,8 +8,12 @@ class Pokedex extends Component {
   render() {
     return (
       <section>
-        <h1>PoKeDeX</h1>
-        <Pokemon poks={pokemon[1]}/>
+        <div className="pokemon-logo">
+        <img src="https://uploads.spiritfanfiction.com/fanfics/historias/201210/pokemon-ridiculous-431762,281020121134.jpg" alt="pokemon-logo"/>
+        </div>
+        <div className="pokedex">
+        {pokemon.map((listp) => <Pokemon key={listp.id} poks={listp}/>)}
+        </div>
       </section>
     )
   } 
