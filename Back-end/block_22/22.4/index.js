@@ -38,11 +38,31 @@ app.put('/users/:name/:age', (req, res) => {
 })*/
 
 
-/*const express = require('express');
+const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const simpsonsUtils = require('./utils');
+const crypto = require('crypto');
 
+
+function generateToken() {
+  return crypto.randomBytes(8).toString('hex');
+}
+
+
+function authMiddleWare(req, res, next) {
+
+  const { authorization } = req.headers;
+
+  if (!authorization || authorization.length !== 16) {
+    return res.status(401).json({ message: 'Token inválido!' });
+  }
+
+  return next();
+  
+}
+
+app.use(authMiddleWare)
 
 app.listen(3000, () => console.log('READY TO WORK'))
 
@@ -90,13 +110,17 @@ app.post('/simpsons', async (req, res) => {
   simpsonsUtils.setSimpsons(addSimpson)
 
   return res.status(204).end();
-})*/
+})
 
-const express = require('express');
+app.post('/signup', (req, res) => {
+  const { email, password, firstName, phone } = req.body;
 
-const app = express();
+  if ([email, password, firstName, phone].includes(undefined)) {
+    return res.status(401).json({ message: 'missing fields' });
+  }
 
+  const token = generateToken()
 
-app.listen(3000, () => console.log('Ouvindo na porta 3000'));
-
+  res.status(200).json({ token });
+})
 
